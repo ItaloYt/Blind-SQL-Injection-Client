@@ -4,7 +4,7 @@ const fs = require("fs/promises")
 const cache_path = "cache.txt"
 
 // this url constantly changes, you need to click on "Acess the lab" in order to generate a new tab, and copy-paste its url here
-const url = "https://0a3e00d503f0f6068344821000ff00ef.web-security-academy.net/"
+const url = "https://0a46002a04d8294a80f035e4004b0086.web-security-academy.net/"
 let session = null
 let tracking_id = null
 
@@ -16,9 +16,9 @@ let request = {
 
 let body = null
 
-console.log("Starting Proxy")
+console.log("Starting Client")
 
-async function proxy() {
+async function client() {
     const cache = await fs.readFile(cache_path).then((value) => value.toString().split("\n"))
 
     if(cache.length == 2) {
@@ -73,7 +73,7 @@ async function proxy() {
     console.log(password)
 }
 
-proxy()
+client()
 
 async function calculateLength() {
     let data = null
